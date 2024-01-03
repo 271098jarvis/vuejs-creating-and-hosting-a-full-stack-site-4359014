@@ -1,5 +1,9 @@
 import express from 'express';
+import { MongoClient } from 'mongodb';
 import {cartItems as cartItemsRaw, products as productsRaw} from './temp-data.js'
+
+const mongoUrl = `mongodb+srv://root:exalead@cluster0.fkvgkmc.mongodb.net/?retryWrites=true&w=majority`
+const client = new MongoClient(mongoUrl)
 
 let cartItems = cartItemsRaw;
 let products = productsRaw;
